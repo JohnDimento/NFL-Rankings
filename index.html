@@ -4,125 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draft Rankings</title>
+    <!-- Link Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
+    <header class="bg-primary text-white text-center py-4">
         <h1>Adrian Charania's Top 10 by Position</h1>
     </header>
 
-    <nav>
-        <ul class="position-list">
-            <li><a href="javascript:void(0)" onclick="showPlayers('qb')">QB</a></li>
-            <li><a href="javascript:void(0)" onclick="showNothing()">RB</a></li>
-            <li><a href="javascript:void(0)" onclick="showNothing()">WR</a></li>
-            <li><a href="javascript:void(0)" onclick="showNothing()">TE</a></li>
-            <li><a href="javascript:void(0)" onclick="showNothing()">OL</a></li>
-            <li><a href="javascript:void(0)" onclick="showNothing()">DL</a></li>
-            <li><a href="javascript:void(0)" onclick="showNothing()">LB</a></li>
-            <li><a href="javascript:void(0)" onclick="showNothing()">DB</a></li>
-        </ul>
+    <!-- Bootstrap Navbar for responsiveness -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Draft Rankings</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="showPlayers('qb')">QB</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">RB</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">WR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">TE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">OL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">DL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">LB</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">DB</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <section class="players-list" id="players-list">
+    <section class="players-list container mt-4" id="players-list">
         <!-- Dynamic player content will be inserted here based on selection -->
     </section>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         // Function to show QB players
         function showPlayers(position) {
             if (position === 'qb') {
                 document.getElementById("players-list").innerHTML = `
-                    <article class="player-card">
-                        <img src="assets/cam_ward.jpeg" alt="Cam Ward">
-                        <div class="player-info">
-                            <h2>Cam Ward <span class="year">(2025)</span></h2>
-                            <p class="position">QB • Miami</p>
-                            <p class="grade">7.50 Grade</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <article class="player-card card">
+                                <img src="assets/cam_ward.jpeg" class="card-img-top" alt="Cam Ward">
+                                <div class="card-body">
+                                    <h2 class="card-title">Cam Ward <span class="year">(2025)</span></h2>
+                                    <p class="card-text">QB • Miami</p>
+                                    <p class="card-text">7.50 Grade</p>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-
-                    <article class="player-card">
-                        <img src="assets/shedeur_sanders.jpeg" alt="Shedeur Sanders">
-                        <div class="player-info">
-                            <h2>Shedeur Sanders <span class="year">(2025)</span></h2>
-                            <p class="position">QB • Colorado</p>
-                            <p class="grade">7.25 Grade</p>
+                        <div class="col-md-4">
+                            <article class="player-card card">
+                                <img src="assets/shedeur_sanders.jpeg" class="card-img-top" alt="Shedeur Sanders">
+                                <div class="card-body">
+                                    <h2 class="card-title">Shedeur Sanders <span class="year">(2025)</span></h2>
+                                    <p class="card-text">QB • Colorado</p>
+                                    <p class="card-text">7.25 Grade</p>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-
-                    <article class="player-card">
-                        <img src="assets/jaxson_dart.jpeg" alt="Jaxson Dart">
-                        <div class="player-info">
-                            <h2>Jaxson Dart <span class="year">(2025)</span></h2>
-                            <p class="position">QB • Ole Miss</p>
-                            <p class="grade">6.75 Grade</p>
+                        <div class="col-md-4">
+                            <article class="player-card card">
+                                <img src="assets/jaxson_dart.jpeg" class="card-img-top" alt="Jaxson Dart">
+                                <div class="card-body">
+                                    <h2 class="card-title">Jaxson Dart <span class="year">(2025)</span></h2>
+                                    <p class="card-text">QB • Ole Miss</p>
+                                    <p class="card-text">6.75 Grade</p>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-
-                    <article class="player-card">
-                        <img src="assets/Quinn Ewers.jpeg" alt="Quinn Ewers">
-                        <div class="player-info">
-                            <h2>Quinn Ewers <span class="year">(2025)</span></h2>
-                            <p class="position">QB • Texas</p>
-                            <p class="grade">6.75 Grade</p>
+                        <div class="col-md-4">
+                            <article class="player-card card">
+                                <img src="assets/Quinn Ewers.jpeg" class="card-img-top" alt="Quinn Ewers">
+                                <div class="card-body">
+                                    <h2 class="card-title">Quinn Ewers <span class="year">(2025)</span></h2>
+                                    <p class="card-text">QB • Texas</p>
+                                    <p class="card-text">6.75 Grade</p>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-
-                    <article class="player-card">
-                        <img src="assets/Jalen_milroe.jpeg" alt="Jalen Milroe">
-                        <div class="player-info">
-                            <h2>Jalen Milroe <span class="year">(2025)</span></h2>
-                            <p class="position">QB • Alabama</p>
-                            <p class="grade">6.50 Grade</p>
+                        <div class="col-md-4">
+                            <article class="player-card card">
+                                <img src="assets/Jalen_milroe.jpeg" class="card-img-top" alt="Jalen Milroe">
+                                <div class="card-body">
+                                    <h2 class="card-title">Jalen Milroe <span class="year">(2025)</span></h2>
+                                    <p class="card-text">QB • Alabama</p>
+                                    <p class="card-text">6.50 Grade</p>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-
-                    <article class="player-card">
-                        <img src="assets/Will_howard.jpeg" alt="Will Howard">
-                        <div class="player-info">
-                            <h2>Will Howard <span class="year">(2025)</span></h2>
-                            <p class="position">QB • Ohio State</p>
-                            <p class="grade">6.00 Grade</p>
+                        <div class="col-md-4">
+                            <article class="player-card card">
+                                <img src="assets/Will_howard.jpeg" class="card-img-top" alt="Will Howard">
+                                <div class="card-body">
+                                    <h2 class="card-title">Will Howard <span class="year">(2025)</span></h2>
+                                    <p class="card-text">QB • Ohio State</p>
+                                    <p class="card-text">6.00 Grade</p>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-
-                    <article class="player-card">
-                        <img src="assets/Kyle_mccord.jpeg" alt="Kyle Mccord">
-                        <div class="player-info">
-                            <h2>Kyle Mccord <span class="year">(2025)</span></h2>
-                            <p class="position">QB • Syracuse</p>
-                            <p class="grade">6.00 Grade</p>
+                        <div class="col-md-4">
+                            <article class="player-card card">
+                                <img src="assets/Kyle_mccord.jpeg" class="card-img-top" alt="Kyle Mccord">
+                                <div class="card-body">
+                                    <h2 class="card-title">Kyle Mccord <span class="year">(2025)</span></h2>
+                                    <p class="card-text">QB • Syracuse</p>
+                                    <p class="card-text">6.00 Grade</p>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-
-                    <article class="player-card">
-                        <img src="assets/Dillon_gabriel.jpeg" alt="Dillon Gabriel">
-                        <div class="player-info">
-                            <h2>Dillon Gabriel <span class="year">(2025)</span></h2>
-                            <p class="position">QB • Oregon</p>
-                            <p class="grade">5.75 Grade</p>
+                        <div class="col-md-4">
+                            <article class="player-card card">
+                                <img src="assets/Dillon_gabriel.jpeg" class="card-img-top" alt="Dillon Gabriel">
+                                <div class="card-body">
+                                    <h2 class="card-title">Dillon Gabriel <span class="year">(2025)</span></h2>
+                                    <p class="card-text">QB • Oregon</p>
+                                    <p class="card-text">5.75 Grade</p>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-
-                    <article class="player-card">
-                        <img src="assets/Tyler Shough.jpeg" alt="Tyler Shough">
-                        <div class="player-info">
-                            <h2>Tyler Shough <span class="year">(2025)</span></h2>
-                            <p class="position">QB • Louisville</p>
-                            <p class="grade">5.50 Grade</p>
+                        <div class="col-md-4">
+                            <article class="player-card card">
+                                <img src="assets/Tyler Shough.jpeg" class="card-img-top" alt="Tyler Shough">
+                                <div class="card-body">
+                                    <h2 class="card-title">Tyler Shough <span class="year">(2025)</span></h2>
+                                    <p class="card-text">QB • Louisville</p>
+                                    <p class="card-text">5.50 Grade</p>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-
-                    <article class="player-card">
-                        <img src="assets/Brady_cook.jpeg" alt="Brady Cook">
-                        <div class="player-info">
-                            <h2>Brady Cook <span class="year">(2025)</span></h2>
-                            <p class="position">QB • Missouri</p>
-                            <p class="grade">5.50 Grade</p>
+                        <div class="col-md-4">
+                            <article class="player-card card">
+                                <img src="assets/Brady_cook.jpeg" class="card-img-top" alt="Brady Cook">
+                                <div class="card-body">
+                                    <h2 class="card-title">Brady Cook <span class="year">(2025)</span></h2>
+                                    <p class="card-text">QB • Missouri</p>
+                                    <p class="card-text">5.50 Grade</p>
+                                </div>
+                            </article>
                         </div>
-                    </article>
+                    </div>
                 `;
             }
         }
@@ -138,5 +181,3 @@
 
 </body>
 </html>
-
-
