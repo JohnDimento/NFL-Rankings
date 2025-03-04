@@ -6,33 +6,15 @@
   <title>Draft Rankings</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    /* Minimal custom CSS; relying mostly on Bootstrap */
-    body {
-      background-color: #f5f5f5;
-    }
-    header {
-      background-color: #1d428a;
-      color: white;
-    }
-    .home-screen {
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .player-card {
-      margin-bottom: 1rem;
-    }
-    .player-card img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-    }
-  </style>
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body>
   <!-- Header -->
-  <header class="py-4 text-center">
-    <h1>Adrian Charania's Top 10 by Position</h1>
+  <header class="py-3 text-center" style="background-color: #1d428a; color: white;">
+    <div class="container">
+      <h2 class="mb-0" style="font-size: 2rem; font-weight: 700;">Adrian Charania's Top 10 by Position</h2>
+      <p class="small" style="letter-spacing: 0.05rem;">Draft Rankings &amp; Analysis of the Top Prospects</p>
+    </div>
   </header>
 
   <!-- Responsive Navbar using Bootstrap -->
@@ -87,7 +69,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // Function to show QB players with a horizontal card layout
     function showPlayers(position) {
       if (position === 'qb') {
         const qbCards = [
@@ -114,7 +95,7 @@
                 <div class="card-body">
                   <h5 class="card-title">${card.title} <span class="text-muted">${card.year}</span></h5>
                   <p class="card-text">${card.team}</p>
-                  <p class="card-text">${card.grade}</p>
+                  <p class="card-text grade text-primary fw-bold">${card.grade}</p>
                 </div>
               </div>
             </div>
