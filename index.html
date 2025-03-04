@@ -31,7 +31,7 @@
             <a class="nav-link" href="javascript:void(0)" onclick="showPlayers('qb')">QB</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">RB</a>
+            <a class="nav-link" href="javascript:void(0)" onclick="showPlayers('rb')">RB</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">WR</a>
@@ -95,7 +95,40 @@
                 <div class="card-body">
                   <h5 class="card-title">${card.title} <span class="text-muted">${card.year}</span></h5>
                   <p class="card-text">${card.team}</p>
-                  <p class="card-text grade text-primary fw-bold">${card.grade}</p>
+                  <p class="card-text grade text-primary fw-bold text-uppercase" style="letter-spacing: 0.05em;">${card.grade}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          `;
+        });
+        document.getElementById("players-list").innerHTML = content;
+      } else if (position === 'rb') {
+        const rbCards = [
+          { img: "assets/ashton_jeanty.jpeg", alt: "Ashton Jeanty", title: "Ashton Jeanty", year: "(2025)", team: "RB • Boise State", grade: "9.50 Grade" },
+          { img: "assets/omarion_hampton.jpeg", alt: "Omarion Hampton", title: "Omarion Hampton", year: "(2025)", team: "RB • UNC", grade: "9.00 Grade" },
+          { img: "assets/kaleb_johnson.jpeg", alt: "Kaleb Johnson", title: "Kaleb Johnson", year: "(2025)", team: "RB • Iowa", grade: "8.75 Grade" },
+          { img: "assets/treyveon_henderson.jpeg", alt: "Treyveon Henderson", title: "Treyveon Henderson", year: "(2025)", team: "RB • Ohio State", grade: "8.25 Grade" },
+          { img: "assets/quinshon_judkins.jpeg", alt: "Quinshon Judkins", title: "Quinshon Judkins", year: "(2025)", team: "RB • Ohio State", grade: "8.25 Grade" },
+          { img: "assets/dylan_sampson.jpeg", alt: "Dylan Sampson", title: "Dylan Sampson", year: "(2025)", team: "RB • Tennessee", grade: "7.50 Grade" },
+          { img: "assets/cam_skattebo.jpeg", alt: "Cam Skattebo", title: "Cam Skattebo", year: "(2025)", team: "RB • ASU", grade: "7.00 Grade" },
+          { img: "assets/ollie_gordon.jpeg", alt: "Ollie Gordon", title: "Ollie Gordon", year: "(2025)", team: "RB • Ok State", grade: "7.00 Grade" },
+          { img: "assets/woody_marks.jpeg", alt: "Woody Marks", title: "Woody Marks", year: "(2025)", team: "RB • USC", grade: "6.50 Grade" },
+          { img: "assets/devin_neal.jpeg", alt: "Devin Neal", title: "Devin Neal", year: "(2025)", team: "RB • Kansas", grade: "6.50 Grade" }
+        ];
+        let content = '';
+        rbCards.forEach(card => {
+          content += `
+          <div class="player-card card mb-3">
+            <div class="row g-0 align-items-center">
+              <div class="col-auto p-3">
+                <img src="${card.img}" class="img-fluid rounded-circle" alt="${card.alt}">
+              </div>
+              <div class="col">
+                <div class="card-body">
+                  <h5 class="card-title">${card.title} <span class="text-muted">${card.year}</span></h5>
+                  <p class="card-text">${card.team}</p>
+                  <p class="card-text grade text-primary fw-bold text-uppercase" style="letter-spacing: 0.05em;">${card.grade}</p>
                 </div>
               </div>
             </div>
@@ -106,7 +139,6 @@
       }
     }
 
-    // Function to show "Nothing here yet" for other positions
     function showNothing() {
       document.getElementById("players-list").innerHTML = `
         <div class="text-center my-4">
