@@ -1,183 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draft Rankings</title>
-    <!-- Link Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Draft Rankings</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Header -->
+  <header class="py-3 text-center" style="background-color: #1d428a; color: white;">
+    <div class="container">
+      <h2 class="mb-0" style="font-size: 2rem; font-weight: 700;">Adrian Charania's Top 10 by Position</h2>
+      <p class="small" style="letter-spacing: 0.05rem;">Draft Rankings &amp; Analysis of the Top Prospects</p>
+    </div>
+  </header>
 
-    <header class="bg-primary text-white text-center py-4">
-        <h1>Adrian Charania's Top 10 by Position</h1>
-    </header>
+  <!-- Responsive Navbar using Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" onclick="showPlayers('qb')">QB</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">RB</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">WR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">TE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">OL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">DL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">LB</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">DB</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Bootstrap Navbar for responsiveness -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Draft Rankings</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="showPlayers('qb')">QB</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">RB</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">WR</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">TE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">OL</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">DL</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">LB</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">DB</a>
-                    </li>
-                </ul>
+  <!-- Content Section -->
+  <section class="container my-4" id="players-list">
+    <!-- Home screen content -->
+    <div class="home-screen">
+      <h2>Welcome to the Draft Rankings</h2>
+      <p>Select a position from the navbar above to view the top players!</p>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function showPlayers(position) {
+      if (position === 'qb') {
+        const qbCards = [
+          { img: "assets/cam_ward.jpeg", alt: "Cam Ward", title: "Cam Ward", year: "(2025)", team: "QB • Miami", grade: "7.50 Grade" },
+          { img: "assets/shedeur_sanders.jpeg", alt: "Shedeur Sanders", title: "Shedeur Sanders", year: "(2025)", team: "QB • Colorado", grade: "7.25 Grade" },
+          { img: "assets/jaxson_dart.jpeg", alt: "Jaxson Dart", title: "Jaxson Dart", year: "(2025)", team: "QB • Ole Miss", grade: "6.75 Grade" },
+          { img: "assets/Quinn Ewers.jpeg", alt: "Quinn Ewers", title: "Quinn Ewers", year: "(2025)", team: "QB • Texas", grade: "6.75 Grade" },
+          { img: "assets/Jalen_milroe.jpeg", alt: "Jalen Milroe", title: "Jalen Milroe", year: "(2025)", team: "QB • Alabama", grade: "6.50 Grade" },
+          { img: "assets/Will_howard.jpeg", alt: "Will Howard", title: "Will Howard", year: "(2025)", team: "QB • Ohio State", grade: "6.00 Grade" },
+          { img: "assets/Kyle_mccord.jpeg", alt: "Kyle Mccord", title: "Kyle Mccord", year: "(2025)", team: "QB • Syracuse", grade: "6.00 Grade" },
+          { img: "assets/Dillon_gabriel.jpeg", alt: "Dillon Gabriel", title: "Dillon Gabriel", year: "(2025)", team: "QB • Oregon", grade: "5.75 Grade" },
+          { img: "assets/Tyler Shough.jpeg", alt: "Tyler Shough", title: "Tyler Shough", year: "(2025)", team: "QB • Louisville", grade: "5.50 Grade" },
+          { img: "assets/Brady_cook.jpeg", alt: "Brady Cook", title: "Brady Cook", year: "(2025)", team: "QB • Missouri", grade: "5.50 Grade" }
+        ];
+        let content = '';
+        qbCards.forEach(card => {
+          content += `
+          <div class="player-card card mb-3">
+            <div class="row g-0 align-items-center">
+              <div class="col-auto p-3">
+                <img src="${card.img}" class="img-fluid rounded-circle" alt="${card.alt}">
+              </div>
+              <div class="col">
+                <div class="card-body">
+                  <h5 class="card-title">${card.title} <span class="text-muted">${card.year}</span></h5>
+                  <p class="card-text">${card.team}</p>
+                  <p class="card-text grade text-primary fw-bold">${card.grade}</p>
+                </div>
+              </div>
             </div>
+          </div>
+          `;
+        });
+        document.getElementById("players-list").innerHTML = content;
+      }
+    }
+
+    // Function to show "Nothing here yet" for other positions
+    function showNothing() {
+      document.getElementById("players-list").innerHTML = `
+        <div class="text-center my-4">
+          <h2>Nothing here yet</h2>
+          <p>Check back later for updates!</p>
         </div>
-    </nav>
-
-    <section class="players-list container mt-4" id="players-list">
-        <!-- Dynamic player content will be inserted here based on selection -->
-    </section>
-
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // Function to show QB players
-        function showPlayers(position) {
-            if (position === 'qb') {
-                document.getElementById("players-list").innerHTML = `
-                    <div class="row">
-                        <div class="col-md-4">
-                            <article class="player-card card">
-                                <img src="assets/cam_ward.jpeg" class="card-img-top" alt="Cam Ward">
-                                <div class="card-body">
-                                    <h2 class="card-title">Cam Ward <span class="year">(2025)</span></h2>
-                                    <p class="card-text">QB • Miami</p>
-                                    <p class="card-text">7.50 Grade</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-md-4">
-                            <article class="player-card card">
-                                <img src="assets/shedeur_sanders.jpeg" class="card-img-top" alt="Shedeur Sanders">
-                                <div class="card-body">
-                                    <h2 class="card-title">Shedeur Sanders <span class="year">(2025)</span></h2>
-                                    <p class="card-text">QB • Colorado</p>
-                                    <p class="card-text">7.25 Grade</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-md-4">
-                            <article class="player-card card">
-                                <img src="assets/jaxson_dart.jpeg" class="card-img-top" alt="Jaxson Dart">
-                                <div class="card-body">
-                                    <h2 class="card-title">Jaxson Dart <span class="year">(2025)</span></h2>
-                                    <p class="card-text">QB • Ole Miss</p>
-                                    <p class="card-text">6.75 Grade</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-md-4">
-                            <article class="player-card card">
-                                <img src="assets/Quinn Ewers.jpeg" class="card-img-top" alt="Quinn Ewers">
-                                <div class="card-body">
-                                    <h2 class="card-title">Quinn Ewers <span class="year">(2025)</span></h2>
-                                    <p class="card-text">QB • Texas</p>
-                                    <p class="card-text">6.75 Grade</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-md-4">
-                            <article class="player-card card">
-                                <img src="assets/Jalen_milroe.jpeg" class="card-img-top" alt="Jalen Milroe">
-                                <div class="card-body">
-                                    <h2 class="card-title">Jalen Milroe <span class="year">(2025)</span></h2>
-                                    <p class="card-text">QB • Alabama</p>
-                                    <p class="card-text">6.50 Grade</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-md-4">
-                            <article class="player-card card">
-                                <img src="assets/Will_howard.jpeg" class="card-img-top" alt="Will Howard">
-                                <div class="card-body">
-                                    <h2 class="card-title">Will Howard <span class="year">(2025)</span></h2>
-                                    <p class="card-text">QB • Ohio State</p>
-                                    <p class="card-text">6.00 Grade</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-md-4">
-                            <article class="player-card card">
-                                <img src="assets/Kyle_mccord.jpeg" class="card-img-top" alt="Kyle Mccord">
-                                <div class="card-body">
-                                    <h2 class="card-title">Kyle Mccord <span class="year">(2025)</span></h2>
-                                    <p class="card-text">QB • Syracuse</p>
-                                    <p class="card-text">6.00 Grade</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-md-4">
-                            <article class="player-card card">
-                                <img src="assets/Dillon_gabriel.jpeg" class="card-img-top" alt="Dillon Gabriel">
-                                <div class="card-body">
-                                    <h2 class="card-title">Dillon Gabriel <span class="year">(2025)</span></h2>
-                                    <p class="card-text">QB • Oregon</p>
-                                    <p class="card-text">5.75 Grade</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-md-4">
-                            <article class="player-card card">
-                                <img src="assets/Tyler Shough.jpeg" class="card-img-top" alt="Tyler Shough">
-                                <div class="card-body">
-                                    <h2 class="card-title">Tyler Shough <span class="year">(2025)</span></h2>
-                                    <p class="card-text">QB • Louisville</p>
-                                    <p class="card-text">5.50 Grade</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-md-4">
-                            <article class="player-card card">
-                                <img src="assets/Brady_cook.jpeg" class="card-img-top" alt="Brady Cook">
-                                <div class="card-body">
-                                    <h2 class="card-title">Brady Cook <span class="year">(2025)</span></h2>
-                                    <p class="card-text">QB • Missouri</p>
-                                    <p class="card-text">5.50 Grade</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                `;
-            }
-        }
-
-        // Function to show "Nothing here yet" for other positions
-        function showNothing() {
-            document.getElementById("players-list").innerHTML = `
-                <h2>Nothing here yet</h2>
-                <p>Check back later for updates!</p>
-            `;
-        }
-    </script>
-
+      `;
+    }
+  </script>
 </body>
 </html>
