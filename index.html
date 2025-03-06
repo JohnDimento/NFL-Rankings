@@ -34,7 +34,7 @@
             <a class="nav-link" href="javascript:void(0)" onclick="showPlayers('rb')">RB</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">WR</a>
+            <a class="nav-link" href="javascript:void(0)" onclick="showPlayers('wr')">WR</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)" onclick="showNothing()">TE</a>
@@ -136,6 +136,39 @@
           `;
         });
         document.getElementById("players-list").innerHTML = content;
+      } else if (position === 'wr') {
+        const wrCards = [
+          { img: "assets/tetairoa_mcmillan.jpeg", alt: "Tetairoa Mcmillan", title: "Tetairoa Mcmillan", year: "(2025)", team: "WR • Arizona", grade: "9.50 Grade" },
+          { img: "assets/travis_hunter.jpeg", alt: "Travis Hunter", title: "Travis Hunter", year: "(2025)", team: "WR • Colorado", grade: "9.50 Grade" },
+          { img: "assets/luther_burden.jpeg", alt: "Luther Burden", title: "Luther Burden", year: "(2025)", team: "WR • Missouri", grade: "9.25 Grade" },
+          { img: "assets/emeka_egbuka.jpeg", alt: "Emeka Egbuka", title: "Emeka Egbuka", year: "(2025)", team: "WR • Ohio State", grade: "9.25 Grade" },
+          { img: "assets/matthew_golden.jpeg", alt: "Matthew Golden", title: "Matthew Golden", year: "(2025)", team: "WR • Texas", grade: "9.00 Grade" },
+          { img: "assets/elic_ayomanor.jpeg", alt: "Elic Ayomanor", title: "Elic Ayomanor", year: "(2025)", team: "WR • Stanford", grade: "8.25 Grade" },
+          { img: "assets/tre_harris.jpeg", alt: "Tre Harris", title: "Tre Harris", year: "(2025)", team: "WR • Ole Miss", grade: "8.00 Grade" },
+          { img: "assets/jack_bech.jpeg", alt: "Jack Bech", title: "Jack Bech", year: "(2025)", team: "WR • TCU", grade: "7.75 Grade" },
+          { img: "assets/isaiah_bond.jpeg", alt: "Isaiah Bond", title: "Isaiah Bond", year: "(2025)", team: "WR • Texas", grade: "7.75 Grade" },
+          { img: "assets/jayden_higgins.jpeg", alt: "Jayden Higgins", title: "Jayden Higgins", year: "(2025)", team: "WR • Iowa State", grade: "7.50 Grade" }
+        ];
+        let content = '';
+        wrCards.forEach(card => {
+          content += `
+          <div class="player-card card mb-3">
+            <div class="row g-0 align-items-center">
+              <div class="col-auto p-3">
+                <img src="${card.img}" class="img-fluid rounded-circle" alt="${card.alt}">
+              </div>
+              <div class="col">
+                <div class="card-body">
+                  <h5 class="card-title">${card.title} <span class="text-muted">${card.year}</span></h5>
+                  <p class="card-text">${card.team}</p>
+                  <p class="card-text grade text-primary fw-bold text-uppercase" style="letter-spacing: 0.05em;">${card.grade}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          `;
+        });
+        document.getElementById("players-list").innerHTML = content;
       }
     }
 
@@ -150,3 +183,4 @@
   </script>
 </body>
 </html>
+
